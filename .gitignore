@@ -1,0 +1,11 @@
+# IntelliJ
+.idea/
+*.iml
+selenium-java\.iml
+
+# Resources
+.fuse_hidden*
+
+# Build artifacts
+build/
+target/
