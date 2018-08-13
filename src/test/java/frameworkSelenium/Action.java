@@ -11,41 +11,27 @@ import org.openqa.selenium.support.ui.Select;
 
 public class Action extends FrameworkWeb {
 
-	// Metodo para realiza click em qualquer elemento do sistema.
+	// Método para realiza click em qualquer elemento do sistema.
 	public static void ClickElement(By localizador) {
 		WebElement element = null;
-
 		Actions actions = null;
 
 		try {
 			element = GetElement(localizador);
-
 			WaitElementVisible(localizador);
-
 			actions = new Actions(GetDriver());
-
 			actions.moveToElement(element);
-
 			actions.perform();
-
 			WaitElementClicable(localizador);
-
 			element.click();
-
 			WaitCallAjax();
-
 		} catch (Exception excecao) {
 			if (excecao instanceof StaleElementReferenceException) {
-
 				ClickElement(localizador);
-
 			} else {
-
 				Logs.ErrorLog(localizador.toString(), excecao);
-
 			}
 		}
-
 	}
 
 	// Digita um texto em um campo.
@@ -53,48 +39,31 @@ public class Action extends FrameworkWeb {
 		WebElement field = GetElement(localizador);
 
 		try {
-
 			WaitCallAjax();
-
 			WaitElementVisible(localizador);
-
 			field.clear();
-
 			Thread.sleep(250);
-
 			field.sendKeys(texto);
-
 			WaitCallAjax();
-
 		} catch (Exception excecao) {
-
 			Logs.ErrorLog(localizador.toString(), excecao);
-
 		}
-
 	}
 
 	// Seleciona um elemento em uma lista estática.
 	public static void SelectListElement(By localizador, String elemento) {
 		WaitCallAjax();
-
 		WaitElementVisible(localizador);
-
 		new Select(GetDriver().findElement(localizador)).selectByVisibleText(elemento);
 	}
 
 	// Verifica se um elemento está presente na tela atual.
 	public static boolean CheckItemPresent(By localizador) {
 		try {
-
 			GetDriver().findElement(localizador);
-
 			return true;
-
 		} catch (ElementNotVisibleException ex) {
-
 			return false;
-
 		}
 	}
 
@@ -102,20 +71,14 @@ public class Action extends FrameworkWeb {
 	public static void ClearFieldText(By localizador) {
 		try {
 			WebElement element = GetElement(localizador);
-
 			element.clear();
 		} catch (Exception ex) {
-
 			Logs.ErrorLog(localizador.toString(), ex);
-
 		}
 	}
 
 	public static void AssertTextInElements(By localizador, String texto) {
 		String textoNoElemento = GetTextElement(localizador);
-
 		Assert.assertEquals(texto, textoNoElemento);
-
 	}
-
 }

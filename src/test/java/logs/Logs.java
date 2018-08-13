@@ -5,10 +5,10 @@ import java.io.FileWriter;
 
 public class Logs {
 
-	// Diretorio onde sera gerado os logs de teste.
+	// Diretório onde sera gerado os logs de teste.
 	private static String CaminhoLog = System.getProperty("user.dir") + "java/logs";
 
-	// Metodo que grava em arquivo .txt as exceções encontradas.
+	// Método que grava em arquivo .txt as exceções encontradas.
 	public static void ErrorLog(String elemento, Exception excecao) {
 		StackTraceElement[] stk = Thread.currentThread().getStackTrace();
 
@@ -37,11 +37,11 @@ public class Logs {
 		}
 	}
 
-	// Metodo que cria pasta para os logs serem salvos dentro.
+	// Método que cria pasta para os logs serem salvos dentro.
 	public static void CreateDirectory(String caminhoPasta) {
 		File theDir = new File(caminhoPasta);
 
-		// Se diretorio não existe, o mesmo é criado.
+		// Se diretório não existe, o mesmo é criado.
 		if (!theDir.exists()) {
 			System.out.println("Criando o diretorio: " + theDir.getName());
 			boolean result = false;

@@ -1,11 +1,7 @@
 package testObjects;
 
 public class DataTest {
+	public static String usuarioAdmin = "it@gmail.com";
 
-	// Variavel que define login do usuario admin.
-	public static String usuarioAdmin = "warleygabriel@gmx.com";
-
-	// Variavel que define a senha do usuario admin.
-	public static String senhaAdmin = "Teste123";
-
+	public static String senhaAdmin = "teste123";
 }
