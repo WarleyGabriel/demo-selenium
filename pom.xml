@@ -5,8 +5,8 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>br.com.poc.selenium</groupId>
-    <artifactId>poc-selenium</artifactId>
+    <groupId>br.com.demo.selenium</groupId>
+    <artifactId>demo-selenium</artifactId>
     <version>1.0-0</version>
 
     <dependencies>
